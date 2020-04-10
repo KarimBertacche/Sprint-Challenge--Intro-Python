@@ -109,4 +109,10 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     if (city.lat > min_lat and city.lat < max_lat) and (city.lon > min_lon and city.lon < max_lon):
         within.append(city) 
 
+  for city in within:
+    print(f"name:{city.name}, lat:{city.lat}, lon:{city.lon}")
+
   return within
+
+print(cityreader_stretch(lat1, lon1, lat2, lon2, cities))
+print(f"Result list length: --> {len(cityreader_stretch(lat1, lon1, lat2, lon2, cities))}")

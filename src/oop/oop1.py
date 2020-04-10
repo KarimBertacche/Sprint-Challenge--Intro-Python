@@ -31,3 +31,20 @@ class Vehicle():
     def stop_engine(self):
         pass
 
+# Both FlightVehicle and GoundVehicle are subclasses or children of the Vehicle class
+# also they are sibling to each other
+class FlightVehicle(Vehicle):
+    def __init__(self, maker = "", colour = "", capacity = 0, speed = 0, wings = 2):
+        super().__init__(maker, colour, capacity, speed)
+        self.wings = wings
+
+    def take_off(self):
+        pass
+
+    def land(self):
+        pass
+
+class GroundVehicle(Vehicle):
+    def __init__(self, maker = "", colour = "", capacity = 0, speed = 0, wheels = 4):
+        super().__init__(maker, colour, capacity, speed)
+        self.wheels = wheels

@@ -6,10 +6,10 @@ class Oop1Tests(unittest.TestCase):
     self.vehicle = Vehicle()
     self.flight_vehicle = FlightVehicle()
     self.ground_vehicle = GroundVehicle()
-    self.car = Car()
-    self.motorcycle = Motorcycle()
-    self.starship = Starship()
-    self.airplane = Airplane()
+    self.car = Car("Ford", "Grey", 5, 120, 4)
+    self.motorcycle = Motorcycle("Kawasaki", "Red", 2, 200, 2)
+    self.starship = Starship("StarWars", "Black", 20, int(6.706e+8), 6)
+    self.airplane = Airplane("Boeing", "White", 100, 960, 2)
 
   def test_flight_vehicle(self):
     self.assertTrue(isinstance(self.flight_vehicle, FlightVehicle))

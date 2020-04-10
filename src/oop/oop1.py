@@ -61,3 +61,12 @@ class Starship(FlightVehicle):
 class Airplane(FlightVehicle):
     def __init__(self, maker, colour, capacity, speed, wings):
         super().__init__(maker, colour, capacity, speed, wings)
+
+# Both Car a Motorcycle are subclasses of the GroundVehicle parent class and the Vehicle Granparent base class which they inherit all the properties and methods from
+class Car(GroundVehicle):
+    def __init__(self, maker, colour, capacity, speed, wheels = 4):
+        super().__init__(maker, colour, capacity, speed, wheels)
+
+class Motorcycle(GroundVehicle):
+    def __init__(self, maker, colour, capacity, speed, wheels = 2):
+        super().__init__(maker, colour, capacity, speed, wheels)

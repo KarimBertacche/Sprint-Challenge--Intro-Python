@@ -9,7 +9,6 @@ class City:
   def __str__(self):
     return f"({self.name}, {self.lat}, {self.lon})"
 
-
 # We have a collection of US cities with population over 750,000 stored in the
 # file "cities.csv". (CSV stands for "comma-separated values".)
 #
@@ -82,8 +81,8 @@ first_coordinates = input(">>> ").split(",")
 print("Pass the second set of latitude an logitude values:")
 second_coordinates = input(">>> ").split(",")
 
-print(first_coordinates)
-print(second_coordinates)
+# print(first_coordinates)
+# print(second_coordinates)
 
 [lat1, lon1] = [first_coordinates[0].strip(), first_coordinates[1].strip()]
 [lat2, lon2] = [second_coordinates[0].strip(), second_coordinates[1].strip()]
@@ -94,18 +93,20 @@ print(second_coordinates)
 # print(lon2)
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
-  # within will hold the cities that fall within the specified region
-  within = []
 
   # TODO Ensure that the lat and lon valuse are all floats
   min_lat = float(lat1) if lat1 < lat2 else float(lat2)
   max_lat = float(lat1) if lat1 > lat2 else float(lat2)
-  min_lon = float(lon1) if lon1 < lon2 else float(lon2)
-  max_lon = float(lon1) if lon1 > lon2 else float(lon2)
-  # Go through each city and check to see if it falls within 
+  min_lon = float(lon1) if lon1 > lon2 else float(lon2)
+  max_lon = float(lon1) if lon1 < lon2 else float(lon2)
+  
+  # within will hold the cities that fall within the specified region
+  within = []
+
+  # Go through each city and check to see if it falls within
   # the specified coordinates.
-  print(min_lat, max_lat, min_lon, max_lon)
+  for city in cities:
+    if (city.lat > min_lat and city.lat < max_lat) and (city.lon > min_lon and city.lon < max_lon):
+        within.append(city) 
 
   return within
-
-cityreader_stretch(lat1, lon1, lat2, lon2, cities)

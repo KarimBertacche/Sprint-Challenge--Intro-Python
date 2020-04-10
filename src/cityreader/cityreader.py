@@ -87,18 +87,13 @@ second_coordinates = input(">>> ").split(",")
 [lat1, lon1] = [first_coordinates[0].strip(), first_coordinates[1].strip()]
 [lat2, lon2] = [second_coordinates[0].strip(), second_coordinates[1].strip()]
 
-# print(lat1)
-# print(lat2)
-# print(lon1)
-# print(lon2)
-
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
 
   # TODO Ensure that the lat and lon valuse are all floats
   min_lat = float(lat1) if lat1 < lat2 else float(lat2)
   max_lat = float(lat1) if lat1 > lat2 else float(lat2)
-  min_lon = float(lon1) if lon1 > lon2 else float(lon2)
-  max_lon = float(lon1) if lon1 < lon2 else float(lon2)
+  min_lon = float(lon1) if lon1 < lon2 else float(lon2)
+  max_lon = float(lon1) if lon1 > lon2 else float(lon2)
   
   # within will hold the cities that fall within the specified region
   within = []
@@ -113,6 +108,3 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     print(f"name:{city.name}, lat:{city.lat}, lon:{city.lon}")
 
   return within
-
-print(cityreader_stretch(lat1, lon1, lat2, lon2, cities))
-print(f"Result list length: --> {len(cityreader_stretch(lat1, lon1, lat2, lon2, cities))}")

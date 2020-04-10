@@ -48,3 +48,16 @@ class GroundVehicle(Vehicle):
     def __init__(self, maker = "", colour = "", capacity = 0, speed = 0, wheels = 4):
         super().__init__(maker, colour, capacity, speed)
         self.wheels = wheels
+
+# Both Starship and Airplane inherit properties from the FlightVehicle
+# which in turn inherits from the Vehicle superclass, 
+# they also inherit all the method of the parent and granparent componentss
+# but they can also override them if needed 
+class Starship(FlightVehicle):
+    def __init__(self, maker, colour, capacity, speed, wings, engine = "propulsor"):
+        super().__init__(maker, colour, capacity, speed, wings)
+        self.engine = engine
+
+class Airplane(FlightVehicle):
+    def __init__(self, maker, colour, capacity, speed, wings):
+        super().__init__(maker, colour, capacity, speed, wings)

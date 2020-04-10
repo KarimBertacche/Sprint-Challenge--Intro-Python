@@ -17,3 +17,17 @@
 #     pass
 #
 # Put a comment noting which class is the base class
+# Base/Super class
+class Vehicle():
+    def __init__(self, maker = "", colour = "", capacity = 0, speed = 0):
+        self.maker = maker
+        self.colour = colour
+        self.capacity = capacity
+        self.speed = speed
+    
+    def accelerate(self):
+        pass
+
+    def stop_engine(self):
+        pass
+
